@@ -12,7 +12,7 @@ function chamarSenha() {
 
         // Atualiza as últimas senhas chamadas
         senhasChamadas.unshift(novaSenha);
-        if (senhasChamadas.length > 5) {
+        if (senhasChamadas.length > 4) {
             senhasChamadas.pop();
         }
         
