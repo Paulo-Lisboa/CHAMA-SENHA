@@ -166,3 +166,97 @@ body {
 #limpar-btn:active {
     transform: scale(0.95);
 }
+/* Adicionando Responsividade */
+
+/* Adicionando a consulta de mídia para telas menores (como celulares) */
+@media (max-width: 768px) {
+    /* Ajustes para o container */
+    .container {
+        width: 90%; /* Aumenta a largura do container */
+        padding: 50px; /* Reduz o padding para dispositivos menores */
+        min-height: auto; /* Permite que a altura do container se ajuste automaticamente */
+    }
+
+    /* Ajustes para o logo */
+    #logo {
+        width: 120px; /* Logo menor em telas pequenas */
+        top: 15px; /* Distância ajustada */
+        left: 15px; /* Distância ajustada */
+    }
+
+    /* Ajustes para o título */
+    .header h1 {
+        font-size: 50px; /* Menor em telas pequenas */
+        margin-bottom: 20px; /* Menos espaçamento abaixo */
+    }
+
+    /* Ajustes para a senha atual */
+    .current-senha h2 {
+        font-size: 120px; /* Senha maior no mobile, mas ainda adaptada */
+        padding: 30px 0; /* Menos padding para caber melhor */
+    }
+
+    /* Ajustes para as últimas senhas */
+    .recent-senhas h3 {
+        font-size: 20px; /* Menor título */
+    }
+
+    .recent-senhas li {
+        font-size: 18px; /* Menor fonte para as senhas recentes */
+        padding: 8px 0; /* Menos padding */
+    }
+
+    /* Ajustes para o campo de input */
+    .input-senha input {
+        font-size: 20px; /* Menor para caber melhor */
+        padding: 10px 15px; /* Menos padding */
+        width: 70%; /* Campo mais largo */
+    }
+
+    /* Ajustes para o botão */
+    .input-senha button {
+        font-size: 20px; /* Menor no celular */
+        padding: 10px 15px;
+    }
+
+    /* Ajustes para o botão de limpar */
+    #limpar-btn {
+        font-size: 16px; /* Botão menor no celular */
+        padding: 8px 15px; /* Menos padding */
+        width: 100%; /* Faz com que o botão ocupe toda a largura disponível */
+        margin-top: 20px; /* Menos espaço entre os botões */
+    }
+}
+
+/* Ajustes para telas muito pequenas (como smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .container {
+        width: 95%; /* Aumenta a largura para aproveitar melhor o espaço */
+        padding: 30px; /* Ajusta o padding para caber melhor */
+    }
+
+    .header h1 {
+        font-size: 40px; /* Tamanho do título ainda menor */
+    }
+
+    .current-senha h2 {
+        font-size: 100px; /* Senha ajustada para telas muito pequenas */
+        padding: 20px 0; /* Menos padding */
+    }
+
+    .input-senha input {
+        font-size: 18px; /* Menor para caber no celular */
+        padding: 8px 12px; /* Menos padding */
+        width: 60%; /* Ajustando a largura */
+    }
+
+    .input-senha button {
+        font-size: 18px; /* Botões menores */
+        padding: 8px 12px;
+    }
+
+    #limpar-btn {
+        font-size: 14px; /* Botão ainda menor */
+        padding: 6px 12px; /* Menos padding */
+    }
+}
