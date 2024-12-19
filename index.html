@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Chama Senha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" id="logo" alt="Logo"> <!-- Logo -->
+        <div class="header">
+            <h1>PRONTO</h1>
+        </div>
+        <div class="current-senha">
+            <h2 id="senha-atual"></h2> <!-- Inicialmente vazio -->
+        </div>
+        <div class="recent-senhas">
+            <h3>Últimas Senhas Chamadas</h3>
+            <ul id="ultimas-senhas">
+                <!-- Lista vazia inicialmente -->
+            </ul>
+        </div>
+        <div class="input-senha">
+            <input type="text" id="input-senha" placeholder="Digite a senha" />
+            <button onclick="chamarSenha()">Chamar Senha</button>
+            <button id="limpar-btn" onclick="limparTela()">Limpar</button> <!-- Botão de limpar -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
