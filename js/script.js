@@ -19,6 +19,9 @@ function chamarSenha() {
         // Exibe as últimas senhas na tela
         updateUltimasSenhas();
 
+        // Usa o Responsive Voice para falar a senha chamada
+        responsiveVoice.speak(`Senha ${novaSenha}`, "Brazilian Portuguese Female");
+
         // Limpa o campo de entrada
         inputSenha.value = '';
     }
