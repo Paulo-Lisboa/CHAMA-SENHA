@@ -46,3 +46,6 @@ function limparTela() {
     senhasChamadas = [];
     updateUltimasSenhas();
 }
+function deslogar() {
+    window.location.href = "/login.html"; // Redireciona para a tela de login
+}
