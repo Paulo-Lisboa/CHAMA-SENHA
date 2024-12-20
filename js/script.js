@@ -47,5 +47,5 @@ function limparTela() {
     updateUltimasSenhas();
 }
 function deslogar() {
-    window.location.href = "/login.html"; // Redireciona para a tela de login
+    window.location.href = "/index.html"; // Redireciona para a tela de login
 }
