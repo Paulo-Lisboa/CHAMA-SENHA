@@ -1,7 +1,7 @@
 /* Estilos gerais */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing:content-box;
 }
 
@@ -319,4 +319,44 @@ body {
 
 #logout-btn:active {
     background: rgba(255, 255, 255, 0.8); /* Ainda mais visível ao clicar */
+}
+/* Estilo para as últimas senhas chamadas no painel */
+.recent-senhas ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr; /* Uma coluna para dispositivos pequenos */
+}
+
+.recent-senhas li {
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Gradiente suave */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.recent-senhas li:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: scale(1.05);
+}
+
+/* Estilo responsivo para telas maiores */
+@media (min-width: 768px) {
+    .recent-senhas ul {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .recent-senhas ul {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    }
 }

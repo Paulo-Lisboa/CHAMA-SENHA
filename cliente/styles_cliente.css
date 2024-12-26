@@ -1,0 +1,146 @@
+/* Reset de margin e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Gradiente de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container principal */
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    width: 80%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Título principal */
+.header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Exibição da senha */
+.current-senha h2 {
+    font-size: clamp(40px, 8vw, 80px); /* Fonte responsiva */
+    font-weight: bold;
+    color: #FF5733;
+    margin: 0 auto; /* Remove margens externas desnecessárias */
+    padding: 20px 10px; /* Ajusta o espaçamento interno */
+    background: linear-gradient(45deg, #FF5733, #FF6F61);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    animation: pulse 1.5s infinite;
+    max-width: 100%; /* Garante que o elemento ocupe todo o espaço disponível no container */
+    word-wrap: break-word; /* Permite quebra de palavras */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    overflow: hidden; /* Esconde o excesso de conteúdo */
+    text-overflow: ellipsis; /* Adiciona reticências para textos muito longos */
+    line-height: 1.2; /* Garante bom espaçamento entre linhas se houver quebra */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+/* Animação de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Rodapé com texto */
+.footer {
+    margin-top: 30px;
+}
+
+.footer p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Estilo para as últimas senhas */
+.ultimas-senhas {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.ultimas-senhas h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Lista de últimas senhas */
+#ultimas-senhas-lista {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr; /* Uma coluna para dispositivos pequenos */
+}
+
+/* Itens da lista */
+#ultimas-senhas-lista li {
+    background: linear-gradient(45deg, #3498db, #2980b9); /* Gradiente suave para a senha */
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efeito de hover */
+#ultimas-senhas-lista li:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db); /* Inverter gradiente no hover */
+    transform: scale(1.05); /* Leve aumento no tamanho */
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 768px) {
+    #ultimas-senhas-lista {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em telas maiores */
+    }
+}
+
+@media (min-width: 1024px) {
+    #ultimas-senhas-lista {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas em telas maiores */
+    }
+}

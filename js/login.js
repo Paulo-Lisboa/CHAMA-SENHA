@@ -16,6 +16,9 @@ loginForm.addEventListener("submit", function (event) {
 
     // Valida as credenciais
     if (username === CREDENTIALS.username && password === CREDENTIALS.password) {
+        // Define o estado de autenticação
+        localStorage.setItem("isAuthenticated", "true");
+
         // Redireciona para o sistema
         window.location.href = "home/index.html"; // Substitua pelo caminho da sua página de sistema
     } else {

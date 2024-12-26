@@ -72,3 +72,20 @@ button:hover {
     margin-top: 10px;
     display: none;
 }
+/* Estilo para o botão de acesso ao cliente */
+.cliente-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 26px;
+    color: white;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px; /* Espaçamento entre os botões */
+    transition: background-color 0.3s;
+}
+
+.cliente-btn:hover {
+    background-color: #0072ff;
+}
