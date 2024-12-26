@@ -19,8 +19,8 @@ body {
     position: relative;
     background: rgba(255, 255, 255, 0.9);
     width: 80%;
-    max-width: 1000px;
-    padding: 80px;
+    max-width: 900px;
+    padding: 45px 40px;
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -50,11 +50,11 @@ body {
 
 /* Senha atual */
 .current-senha h2 {
-    font-size: 180px;
+    font-size: 150px;
     font-weight: bold;
     color: #FF5733;
-    margin: 20px 0;
-    padding: 20px;
+    margin: 15px 0;
+    padding: 12px;
     background: linear-gradient(45deg, #FF5733, #FF6F61);
     color: white;
     border-radius: 15px;
