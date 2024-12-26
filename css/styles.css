@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 
 body {
@@ -49,6 +49,9 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap; /* Garante que o título não quebre a linha */ 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .current-senha h2 {
@@ -228,7 +231,7 @@ body {
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .header h1 {
-        font-size: 40px; /* Reduzido para melhorar em telas menores */
+        font-size: 33px; /* Reduzido para melhorar em telas menores */
     }
 
     .current-senha h2 {
