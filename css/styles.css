@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Alterado para border-box para melhor controle do padding e border */
+    box-sizing: border-box;
 }
 
 body {
@@ -12,34 +12,37 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+    overflow: hidden;
 }
 
 .container {
     position: relative;
     background: rgba(255, 255, 255, 0.9);
-    width: 80%;
+    width: 90%; /* Reduzido para melhorar em telas menores */
     max-width: 900px;
-    padding: 45px 40px;
+    padding: 20px; /* Reduzido para melhorar em telas menores */
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
     backdrop-filter: blur(40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 150px; /* Espaço reservado para a logo */
 }
 
-/* Logo */
 #logo {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 180px;
+    width: 150px; /* Reduzido para melhorar em telas menores */
     height: auto;
     object-fit: contain;
 }
 
-/* Título do cabeçalho */
 .header h1 {
-    font-size: 100px;
+    font-size: 60px; /* Reduzido para melhorar em telas menores */
     font-weight: bold;
     color: #4CAF50;
     margin-bottom: 20px;
@@ -48,9 +51,8 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Senha atual */
 .current-senha h2 {
-    font-size: 150px;
+    font-size: 100px; /* Reduzido para melhorar em telas menores */
     font-weight: bold;
     color: #FF5733;
     margin: 15px 0;
@@ -63,7 +65,6 @@ body {
     animation: pulse 1.5s infinite;
 }
 
-/* Efeito de pulsação */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -76,13 +77,12 @@ body {
     }
 }
 
-/* Últimas senhas chamadas */
 .recent-senhas {
     margin-top: 40px;
 }
 
 .recent-senhas h3 {
-    font-size: 24px;
+    font-size: 20px; /* Reduzido para melhorar em telas menores */
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
@@ -95,21 +95,18 @@ body {
     list-style-type: none;
     padding: 0;
     margin: 20px 0;
-    display: flex; /* Usando flexbox para melhor controle do alinhamento */
-    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se necessário */
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    gap: 10px; /* Espaçamento entre os botões */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
-
-
-/* Estilo para os botões de senhas recentes */
 
 .senha-btn {
     background: linear-gradient(45deg, #3498db, #2980b9);
     color: white;
-    font-size: 30px;
+    font-size: 20px; /* Reduzido para melhorar em telas menores */
     font-weight: bold;
-    padding: 15px 20px; /* Aumentei um pouco o padding horizontal */
+    padding: 10px 15px; /* Reduzido para melhorar em telas menores */
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -118,12 +115,12 @@ body {
     cursor: pointer;
     margin: 5px;
     box-sizing: border-box;
-    max-width: 190px; /* Largura máxima para o botão */
+    max-width: 190px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço disponível */
-    flex-shrink: 1; /* Permite que os botões diminuam se necessário */
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .senha-btn:hover {
@@ -135,33 +132,21 @@ body {
     transform: scale(0.98);
 }
 
-/* Estilos responsivos */
-@media (min-width: 768px) {
-    .senha-btn {
-        font-size: 20px;
-        padding: 12px 20px;
-        max-width: 200px; /* Aumenta a largura máxima em telas maiores */
-    }
-}
-
-@media (min-width: 1024px) {
-    .senha-btn {
-        font-size: 22px;
-        padding: 15px 25px;
-        max-width: 250px; /* Aumenta a largura máxima em telas maiores */
-    }
-}
-
-/* Campo de input para a senha */
 .input-senha {
-    margin-top: 30px;
+    margin-top: 20px; /* Reduzido para melhorar em telas menores */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px; /* Adicionado espaçamento entre os elementos */
 }
 
 .input-senha input {
-    font-size: 24px;
-    padding: 12px 20px;
+    font-size: 20px; /* Reduzido para melhorar em telas menores */
+    padding: 10px 15px; /* Reduzido para melhorar em telas menores */
     margin-right: 10px;
-    width: 250px;
+    width: calc(100% - 140px); /* Ajustado para melhor responsividade */
     border: 2px solid #ccc;
     border-radius: 10px;
     background: #fafafa;
@@ -176,8 +161,8 @@ body {
 }
 
 .input-senha button {
-    font-size: 24px;
-    padding: 12px 20px;
+    font-size: 20px; /* Reduzido para melhorar em telas menores */
+    padding: 10px 15px; /* Reduzido para melhorar em telas menores */
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -195,9 +180,8 @@ body {
     transform: scale(0.98);
 }
 
-/* Botão de Limpar */
 #limpar-btn {
-    font-size: 18px;
+    font-size: 16px; /* Reduzido para melhorar em telas menores */
     padding: 8px 15px;
     background-color: #e74c3c;
     color: white;
@@ -208,7 +192,7 @@ body {
     margin-top: 20px;
     width: 100%;
     max-width: 180px;
-    box-sizing: border-box; /* Importante para o width */
+    box-sizing: border-box;
 }
 
 #limpar-btn:hover {
@@ -219,7 +203,6 @@ body {
     transform: scale(0.95);
 }
 
-/* Botão de Logout */
 #logout-btn {
     position: fixed;
     bottom: 10px;
@@ -243,10 +226,28 @@ body {
 }
 
 /* Estilos responsivos */
-@media (min-width: 768px) {
-    .recent-senhas ul {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 40px; /* Reduzido para melhorar em telas menores */
+    }
+
+    .current-senha h2 {
+        font-size: 80px; /* Reduzido para melhorar em telas menores */
+    }
+
+    .senha-btn {
+        font-size: 16px; /* Reduzido para melhorar em telas menores */
+        padding: 8px 10px; /* Reduzido para melhorar em telas menores */
+    }
+
+    .input-senha input {
+        font-size: 18px; /* Reduzido para melhorar em telas menores */
+        padding: 8px 10px; /* Reduzido para melhorar em telas menores */
+        width: calc(100% - 120px); /* Ajustado para melhor responsividade */
+    }
+
+    .input-senha button {
+        font-size: 18px; /* Reduzido para melhorar em telas menores */
+        padding: 8px 10px; /* Reduzido para melhorar em telas menores */
     }
 }
-
-@media (min-width: 1
