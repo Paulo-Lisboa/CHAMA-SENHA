@@ -2,21 +2,21 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing:content-box;
+    box-sizing: border-box; /* Alterado para border-box para melhor controle do padding e border */
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #00c6ff, #0072ff); /* Gradiente de fundo */
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias */
 }
 
 .container {
-    position: relative; /* Para permitir posicionamento absoluto dentro */
+    position: relative;
     background: rgba(255, 255, 255, 0.9);
     width: 80%;
     max-width: 1000px;
@@ -30,11 +30,11 @@ body {
 /* Logo */
 #logo {
     position: absolute;
-    top: 10px; /* Distância do topo */
-    left: 10px; /* Distância da esquerda */
-    width: 180px; /* Tamanho do logo */
+    top: 10px;
+    left: 10px;
+    width: 180px;
     height: auto;
-    object-fit: contain; /* Para manter a proporção da imagem */
+    object-fit: contain;
 }
 
 /* Título do cabeçalho */
@@ -94,20 +94,62 @@ body {
 .recent-senhas ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 10px;
+    margin: 20px 0;
+    display: flex; /* Usando flexbox para melhor controle do alinhamento */
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se necessário */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaçamento entre os botões */
 }
 
-.recent-senhas li {
-    font-size: 24px;
+
+/* Estilo para os botões de senhas recentes */
+
+.senha-btn {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    font-size: 30px;
     font-weight: bold;
-    color: #444;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    transition: background-color 0.3s ease;
+    padding: 15px 20px; /* Aumentei um pouco o padding horizontal */
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    box-sizing: border-box;
+    max-width: 190px; /* Largura máxima para o botão */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço disponível */
+    flex-shrink: 1; /* Permite que os botões diminuam se necessário */
 }
 
-.recent-senhas li:hover {
-    background-color: #f1f1f1;
+.senha-btn:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: scale(1.05);
+}
+
+.senha-btn:active {
+    transform: scale(0.98);
+}
+
+/* Estilos responsivos */
+@media (min-width: 768px) {
+    .senha-btn {
+        font-size: 20px;
+        padding: 12px 20px;
+        max-width: 200px; /* Aumenta a largura máxima em telas maiores */
+    }
+}
+
+@media (min-width: 1024px) {
+    .senha-btn {
+        font-size: 22px;
+        padding: 15px 25px;
+        max-width: 250px; /* Aumenta a largura máxima em telas maiores */
+    }
 }
 
 /* Campo de input para a senha */
@@ -155,7 +197,7 @@ body {
 
 /* Botão de Limpar */
 #limpar-btn {
-    font-size: 18px;  /* Menor que o botão de chamar senha */
+    font-size: 18px;
     padding: 8px 15px;
     background-color: #e74c3c;
     color: white;
@@ -163,9 +205,10 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px; /* Mais afastado do botão de chamar senha */
-    width: 100%; /* Faz o botão ocupar toda a largura disponível */
-    max-width: 180px; /* Limita a largura máxima */
+    margin-top: 20px;
+    width: 100%;
+    max-width: 180px;
+    box-sizing: border-box; /* Importante para o width */
 }
 
 #limpar-btn:hover {
@@ -176,137 +219,15 @@ body {
     transform: scale(0.95);
 }
 
-/* Estilos para telas grandes */
-@media (min-width: 1024px) {
-    .container {
-        width: 70%; /* Reduz a largura do container em telas grandes */
-        padding: 60px; /* Menos padding para otimizar o espaço */
-    }
-
-    /* Ajusta o logo para um tamanho razoável em telas grandes */
-    #logo {
-        width: 150px; /* Logo com tamanho mais adequado */
-    }
-
-    .header h1 {
-        font-size: 80px; /* Menor que no mobile */
-        margin-bottom: 20px;
-    }
-
-    .current-senha h2 {
-        font-size: 150px; /* Senha ajustada para telas grandes */
-        padding: 30px 0;
-    }
-
-    .recent-senhas h3 {
-        font-size: 22px;
-    }
-
-    .recent-senhas li {
-        font-size: 20px;
-    }
-
-    .input-senha input {
-        font-size: 22px;
-        width: 60%; /* Ajusta a largura do campo de entrada */
-    }
-
-    .input-senha button {
-        font-size: 22px;
-        padding: 10px 20px;
-    }
-
-    #limpar-btn {
-        font-size: 18px; /* Ajusta o tamanho do botão de limpar */
-        padding: 10px 20px;
-    }
-}
-
-/* Estilos para telas pequenas (já configurados anteriormente) */
-
-/* Consultas para telas pequenas (como smartphones) */
-@media (max-width: 768px) {
-    .container {
-        width: 90%; /* Aumenta a largura do container */
-        padding: 50px; /* Reduz o padding para dispositivos menores */
-    }
-
-    #logo {
-        width: 70px;
-        top: 15px;
-        left: 15px;
-    }
-
-    .header h1 {
-        font-size: 50px;
-    }
-
-    .current-senha h2 {
-        font-size: 110px;
-        padding: 30px 0;
-    }
-
-    .input-senha input {
-        font-size: 20px;
-        width: 70%;
-    }
-
-    .input-senha button {
-        font-size: 20px;
-        padding: 10px 15px;
-    }
-
-    #limpar-btn {
-        font-size: 16px;
-        padding: 8px 15px;
-        width: 50%; /* Garante que o botão ocupe toda a largura disponível */
-        max-width: 50px; /* Limita a largura máxima */
-    }
-}
-
-/* Ajustes para telas muito pequenas (como smartphones em modo retrato) */
-@media (max-width: 480px) {
-    .container {
-        width: 95%;
-        padding: 50px;
-    }
-
-    .header h1 {
-        font-size: 40px;
-    }
-
-    .current-senha h2 {
-        font-size: 100px;
-        padding: 20px 0;
-    }
-
-    .input-senha input {
-        font-size: 18px;
-        padding: 8px 12px;
-        width: 60%;
-    }
-
-    .input-senha button {
-        font-size: 18px;
-        margin-top: 15px;
-        padding: 8px 12px;
-    }
-
-    #limpar-btn {
-        font-size: 14px;
-        padding: 6px 12px;
-        width: 100%; /* Garante que o botão ocupe toda a largura disponível */
-        max-width: 180px; /* Limita a largura máxima */
-    }
-}
+/* Botão de Logout */
 #logout-btn {
     position: fixed;
-    bottom: 10px; /* Distância do canto inferior */
-    left: 10px;  /* Distância do canto esquerdo */
-    background: rgba(255, 255, 255, 0.2); /* Cor quase transparente */
+    bottom: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
-    color: #333; /* Cor do texto */
-    font-size: 14px; /* Tamanho do texto pequeno */
+    color: #333;
+    font-size: 14px;
     padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
@@ -314,49 +235,18 @@ body {
 }
 
 #logout-btn:hover {
-    background: rgba(255, 255, 255, 0.5); /* Mais visível ao passar o mouse */
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #logout-btn:active {
-    background: rgba(255, 255, 255, 0.8); /* Ainda mais visível ao clicar */
-}
-/* Estilo para as últimas senhas chamadas no painel */
-.recent-senhas ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px 0;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr; /* Uma coluna para dispositivos pequenos */
+    background: rgba(255, 255, 255, 0.8);
 }
 
-.recent-senhas li {
-    background: linear-gradient(45deg, #3498db, #2980b9); /* Gradiente suave */
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Efeito ao passar o mouse */
-.recent-senhas li:hover {
-    background: linear-gradient(45deg, #2980b9, #3498db);
-    transform: scale(1.05);
-}
-
-/* Estilo responsivo para telas maiores */
+/* Estilos responsivos */
 @media (min-width: 768px) {
     .recent-senhas ul {
-        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (min-width: 1024px) {
-    .recent-senhas ul {
-        grid-template-columns: repeat(3, 1fr); /* Três colunas */
-    }
-}
+@media (min-width: 1
