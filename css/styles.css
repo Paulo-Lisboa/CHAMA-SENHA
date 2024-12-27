@@ -184,15 +184,15 @@ body {
 }
 
 #limpar-btn {
-    font-size: 16px; /* Reduzido para melhorar em telas menores */
-    padding: 8px 15px;
+    font-size: 20px; /* Reduzido para melhorar em telas menores */
+    padding: 10px 15px;
     background-color: #e74c3c;
     color: white;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
+    margin-top: 0px;
     width: 100%;
     max-width: 180px;
     box-sizing: border-box;
@@ -231,26 +231,38 @@ body {
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .header h1 {
-        font-size: 33px; /* Reduzido para melhorar em telas menores */
+        font-size: 28px; /* Ajusta o tamanho do texto */
+        margin-bottom: 15px; /* Espaço inferior */
     }
 
     .current-senha h2 {
-        font-size: 80px; /* Reduzido para melhorar em telas menores */
+        font-size: 70px; /* Reduzido para melhorar em telas menores */
+        padding: 10px; /* Ajusta o espaço interno */
+        margin: 10px 0; /* Espaçamento vertical */
     }
 
     .senha-btn {
         font-size: 16px; /* Reduzido para melhorar em telas menores */
-        padding: 8px 10px; /* Reduzido para melhorar em telas menores */
+        padding: 15px 13px; /* Reduzido para melhorar em telas menores */
     }
 
     .input-senha input {
-        font-size: 18px; /* Reduzido para melhorar em telas menores */
-        padding: 8px 10px; /* Reduzido para melhorar em telas menores */
-        width: calc(100% - 120px); /* Ajustado para melhor responsividade */
+        font-size: 16px;
+        padding: 10px;
+        width: 100%; /* Ocupará toda a largura disponível */
+        max-width: 300px; /* Limite para largura */
     }
 
     .input-senha button {
-        font-size: 18px; /* Reduzido para melhorar em telas menores */
-        padding: 8px 10px; /* Reduzido para melhorar em telas menores */
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%; /* O botão ocupa toda a largura */
+        max-width: 300px; /* Limite para largura */
+    }
+    #limpar-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%; /* O botão ocupa toda a largura */
+        max-width: 300px; /* Limite para largura */
     }
 }
