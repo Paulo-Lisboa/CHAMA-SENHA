@@ -1,6 +1,6 @@
-const senhaAtual = document.getElementById("senha-atual");
-const ultimasSenhas = document.getElementById("ultimas-senhas");
-const inputSenha = document.getElementById("input-senha");
+const senhaAtual = document.querySelector("#senha-atual");
+const ultimasSenhas = document.querySelector("#ultimas-senhas");
+const inputSenha = document.querySelector("#input-senha");
 
 // Recupera as últimas senhas do localStorage ou inicializa um array vazio
 let senhasChamadas = JSON.parse(localStorage.getItem("ultimasSenhas")) || [];
@@ -29,7 +29,12 @@ function chamarSenha() {
         inputSenha.value = ''; // Limpa o campo de input
         updateUltimasSenhas(); // Atualiza a exibição das últimas senhas
     } else {
-        alert("Por favor, digite uma senha."); // Mensagem caso o input esteja vazio
+        const aviso = document.createElement("p");
+        aviso.textContent = "⚠ Digite uma senha!";
+        aviso.style.color = "red";
+        inputSenha.insertAdjacentElement("afterend", aviso);
+        setTimeout(() => aviso.remove(), 3000);
+
     }
 }
 
@@ -71,6 +76,7 @@ function limparTela() {
 }
 
 function deslogar() {
+    localStorage.removeItem("isAuthenticated");
     window.location.href = "/index.html";
 }
 
