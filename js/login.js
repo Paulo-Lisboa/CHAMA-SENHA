@@ -1,4 +1,4 @@
-// Usuário e senha cadastrados previamente
+/* Usuário e senha cadastrados previamente
 const CREDENTIALS = {
     username: "admin", // Substitua pelo usuário desejado
     password: "123456" // Substitua pela senha desejada
@@ -26,4 +26,32 @@ loginForm.addEventListener("submit", function (event) {
         errorMessage.textContent = "Usuário ou senha incorretos!";
         errorMessage.style.display = "block";
     }
+});*/
+const loginForm = document.getElementById("login-form");
+const errorMessage = document.getElementById("error-message");
+
+loginForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita o envio do formulário padrão
+
+    const formData = new FormData(loginForm);
+
+    fetch("/auth.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        if (result.includes("Autenticado com sucesso")) {
+            window.location.href = "home/index.html"; // Redireciona para o painel
+        } else {
+            errorMessage.textContent = "Usuário ou senha incorretos!";
+            errorMessage.style.display = "block";
+        }
+    })
+    .catch(error => {
+        console.error("Erro:", error);
+        errorMessage.textContent = "Erro ao conectar ao servidor.";
+        errorMessage.style.display = "block";
+    });
 });
+
