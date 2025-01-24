@@ -26,6 +26,13 @@ Este projeto implementa um sistema simples de "Chama Senha", com uma interface w
 ```
 chama-senha/
 ├── index.html          # Tela de Login
+├── API                 # pasta da API de senhas
+│   ├── cliente.php     
+│   ├── login.php       # arquivo de login do backend que busca no db.php os dados de conexão
+│   ├── db.php          # arquivo que contem os dados de conexão com o banco de dados
+│   ├── senhas.jason    # arquivo vazio          
+│   ├── senhas.php          
+│   └── usuarios.php          
 ├── cliente/            # Pasta para o painel do cliente final
 │   ├── cliente.html    # Página do painel do cliente
 │   ├── cliente.js      # Lógica do painel do cliente
