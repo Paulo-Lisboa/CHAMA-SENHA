@@ -1,29 +1,39 @@
-// Usuário e senha cadastrados previamente
-const CREDENTIALS = {
-    username: "admin", // Substitua pelo usuário desejado
-    password: "123456" // Substitua pela senha desejada
-};
+document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
 
-const loginForm = document.getElementById("login-form");
-const errorMessage = document.getElementById("error-message");
+    fetch('/API/login.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: username,
+            senha: password
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            // Armazena informações do usuário
+            localStorage.setItem('isAuthenticated', 'true');
+            localStorage.setItem('userId', data.usuario.id);
+            localStorage.setItem('clienteId', data.usuario.cliente_id);
+            localStorage.setItem('userName', data.usuario.nome);
 
-loginForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita o envio do formulário padrão
-
-    // Obtém os valores dos campos
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value;
-
-    // Valida as credenciais
-    if (username === CREDENTIALS.username && password === CREDENTIALS.password) {
-        // Define o estado de autenticação
-        localStorage.setItem("isAuthenticated", "true");
-
-        // Redireciona para o sistema
-        window.location.href = "home/index.html"; // Substitua pelo caminho da sua página de sistema
-    } else {
-        // Exibe mensagem de erro
-        errorMessage.textContent = "Usuário ou senha incorretos!";
-        errorMessage.style.display = "block";
-    }
+            // Redireciona para o painel
+            window.location.href = 'home/index.html';
+        } else {
+            errorMessage.textContent = data.message;
+            errorMessage.style.display = 'block';
+        }
+    })
+    .catch(error => {
+        errorMessage.textContent = 'Erro na conexão com o servidor';
+        errorMessage.style.display = 'block';
+        console.error('Erro:', error);
+    });
 });
